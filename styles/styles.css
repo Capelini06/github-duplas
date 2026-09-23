@@ -1,28 +1,109 @@
-body {
-    background-color: #dadbdb;
+* {
+    max-width: 100%;
 }
 
-main {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.25;
+    background-color: #4a4d56;
+    color: aliceblue;
+    font-size: 1.125rem;
+}
+
+main{
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
     gap: 20px;
     width: 80%;
     margin: auto;
 }
 
-.cards {
-    border: 3px solid black;
-    border-radius: 10px;
+header {
     display: flex;
-    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+}
 
-    img {
-        border-radius: 10px;
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: #0633a3;
+    border: 3px solid #009cfe;
+    padding: 5px;
+    margin: 10px;
+}
+
+.projetos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(240px, calc((100% - 60px) / 3)), 1fr));
+    /* no máximo 3 colunas (1/3 da largura menos os 2 gaps de 30px); abaixo disso, cai para 2 e depois 1 quando o card não cabe com 240px. */
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #2e3035;
+    border: 5px solid #031951;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.card figure {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    gap: 10px;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.img-card {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.card figure a {
+    margin-top: auto;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
 }
 
 img {
-           width: 400px;
-        border: 3px solid black;
+    width: 420px;
+    height: auto;
+    border: 3px solid black;
 }
 
 .botao-chaleira {
@@ -39,4 +120,8 @@ img {
     font-weight: 900;
     border: 3px solid #643c00;
     padding: 10px;
+}
+
+footer {
+    text-align: center
 }
