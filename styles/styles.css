@@ -1,0 +1,42 @@
+body {
+    background-color: #dadbdb;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.cards {
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+
+    img {
+        border-radius: 10px;
+    }
+}
+
+img {
+           width: 400px;
+        border: 3px solid black;
+}
+
+.botao-chaleira {
+    background-color: #c50000;
+    color: black;
+    font-weight: 900;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.botao-macaco {
+    background-color: #e5ff00;
+    color: #643c00;
+    font-weight: 900;
+    border: 3px solid #643c00;
+    padding: 10px;
+}
