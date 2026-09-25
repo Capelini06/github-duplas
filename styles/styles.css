@@ -1,21 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&family=Playwrite+CA+Guides&display=swap');
+
+:root {
+    --alice-blue: #f0f8ff;
+    --cinza: #4a4d56;
+    --azul: #0633a3;
+    --preto: #2e3035;
+    --amarelo: #e5ff00;
+    --vermelho: #c50000;
+    --marrom: #643c00;
+    --borda-botao: 3px solid #0182d2;
+    --borda-card: 5px solid #031951;
+    --borda-botao-macaco: 3px solid #643c00;
+    --borda-botao-chaleira: 3px solid black;
+    --gap: 20px;
+    --raio: 15px;
+    --padding: 10px;
+
+    --fonte-titulos: Orbitron, sans-serif;
+    --fonte-secundaria: 'Audiowide', sans-serif;
+
+    --letra-muito-pequena: 8px --letra-pequena: 12px;
+    --letra-media: 22px;
+    --letra-grande: 72px;
+}
+
 * {
     max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-secundaria)
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.25;
-    background-color: #4a4d56;
-    color: aliceblue;
-    font-size: 1.125rem;
+    background: linear-gradient(to right, var(--cinza), var(--preto));
+    color: var(--alice-blue);
+    font-size: var(--letra-media);
 }
 
-main{
+h1 {
+    font-size: var(--letra-grande);
+    font-family: var(--fonte-titulos);
+}
+
+main {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--gap);
     width: 80%;
     margin: auto;
 }
@@ -25,19 +59,10 @@ header {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--gap);
     width: 80%;
     margin: auto;
     margin-bottom: 30px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    background-color: #0633a3;
-    border: 3px solid #009cfe;
-    padding: 5px;
-    margin: 10px;
 }
 
 .projetos {
@@ -53,26 +78,29 @@ a {
     /* no máximo 3 colunas (1/3 da largura menos os 2 gaps de 30px); abaixo disso, cai para 2 e depois 1 quando o card não cabe com 240px. */
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
+    gap: var(--gap);
     box-sizing: border-box;
 }
 
 .card {
-    background-color: #2e3035;
-    border: 5px solid #031951;
-    padding: 20px;
-    border-radius: 15px;
+    background: radial-gradient(circle,white, var(--cinza), var(--preto));
+    border: var(--borda-card);
+    padding: var(--padding);
+    border-radius: var(--raio);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+}
+
+.card p {
+    font-size: var(--letra-pequena);
 }
 
 .card figure {
     display: flex;
     flex-direction: column;
-    flex: 1;
     margin: 0;
-    gap: 10px;
+    gap: var(--gap);
 }
 
 .card img {
@@ -98,30 +126,71 @@ a {
     flex-direction: column;
     gap: 10px;
     margin: auto;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(to right, var(--azul), #009cfe);
+    border: var(--borda-botao);
+    padding: var(--padding);
+    margin: 10px;
+    font-family: var(--fonte-titulos);
+    transition: 0.8s;
+}
+
+.botoes:hover {
+    background: linear-gradient(to left, var(--azul), #009cfe);
 }
 
 img {
-    width: 420px;
+    width: 4var(--gap);
     height: auto;
-    border: 3px solid black;
+    border: var(--borda-botao)
 }
 
 .botao-chaleira {
-    background-color: #c50000;
-    color: black;
+    background-color: var(--vermelho);
+    color: var(--preto);
     font-weight: 900;
-    border: 3px solid black;
-    padding: 10px;
+    border: var(--borda-botao-chaleira);
+    padding: var(--padding);
+    font-family: var(--fonte-titulos);
 }
 
-.botao-macaco {
-    background-color: #e5ff00;
-    color: #643c00;
+henny penny .botao-macaco {
+    background-color: var(--amarelo);
+    color: var(--marrom);
     font-weight: 900;
-    border: 3px solid #643c00;
-    padding: 10px;
+    border: var(--borda-botao-macaco);
+    padding: var(--padding);
+    font-family: var(--fonte-titulos);
 }
 
 footer {
-    text-align: center
+    text-align: center;
+    background: linear-gradient(to right, var(--alice-blue) 0%, #009cfe 50%, var(--azul) 100%);
+    padding: var(--padding);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: var(--letra-muito-pequena);
+    }
+
+    body h1 {
+        font-size: var(--letra-media);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    body,
+    .cards,
+    .card {
+        background: var(--alice-blue);
+        color: black;
+    }
+
+    .botoes {
+        background-color: #009cfe;
+        border-color: #031951;
+    }
 }
